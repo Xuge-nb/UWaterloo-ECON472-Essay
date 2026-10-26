@@ -1,0 +1,37 @@
+Part 1: all unit tests passed.
+
+Part 2: signal strength (N = 200,000, p = 10)
+DGP               A       B
+Var(m0)      0.3897  0.0950
+Var(g0)      1.4910  0.2708
+Var(l0)      2.3499  0.3910
+R2(D|X)      0.2807  0.0870
+R2(Y|X)      0.6538  0.2388
+E[m0]       -0.0011  0.1193
+E[g0]       -0.0024  0.4742
+Corr(m0,g0)  0.9990  0.6013 
+
+Part 3: share of nuisance variance a model class can represent (population projection on X1..X4), and its L2 approximation error
+DGP              A       B
+linR2(m0)   0.6418  0.3373
+addR2(m0)   1.0000  0.5837
+linErr(m0)  0.3748  0.2511
+addErr(m0)  0.0017  0.1990
+linR2(l0)   0.6299  0.0200
+addR2(l0)   1.0000  0.2399
+linErr(l0)  0.9355  0.6180
+addErr(l0)  0.0043  0.5443 
+
+Implied floor on sqrt(n)*e_m*(e_m+e_l) from approximation error alone
+DGP                      A       B
+R_floor_lin_n500   10.9801  4.8791
+R_floor_lin_n2000  21.9601  9.7581
+R_floor_add_n500    0.0002  3.3072
+R_floor_add_n2000   0.0005  6.6145 
+
+Part 4: oracle DML with true nuisances (R = 1000, p = 10)
+DGP    n  p    bias  sd(theta_hat)  mean SE  coverage
+  A  500 10 -0.0006         0.0470   0.0445     0.941
+  A 2000 10  0.0002         0.0228   0.0223     0.944
+  B  500 10 -0.0010         0.0443   0.0447     0.948
+  B 2000 10  0.0011         0.0231   0.0223     0.947
